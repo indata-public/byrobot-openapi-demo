@@ -2,7 +2,7 @@ package com.indata.openapi.samples;
 
 import com.alibaba.fastjson.JSON;
 import com.indata.openapi.model.*;
-import com.indata.openapi.until.IndataHttpUtils;
+import com.indata.openapi.untils.IndataHttpUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ public class Samples {
 
     private static final String APP_KEY = "*** 申请的AppKey ***";
     private static final String APP_SECRET = "*** 申请的AppSecret ***";
-    private static final String baseUrl = "";
+    private static final String baseUrl = "http://api.byrobot.cn";
 
     /**
      * 流程步骤
@@ -119,7 +119,7 @@ public class Samples {
         List<CustomerInfoExtVO> customerInfoList = new CopyOnWriteArrayList<>();
         CustomerInfoExtVO customerInfoExtVO = new CustomerInfoExtVO();
         customerInfoExtVO.setName("繁华");
-        customerInfoExtVO.setPhone("18092906096");
+        customerInfoExtVO.setPhone("18011122333");
         customerInfoList.add(customerInfoExtVO);
         importTaskCustomerVO.setCustomerInfoList(customerInfoList);
         String json = JSON.toJSONString(importTaskCustomerVO);

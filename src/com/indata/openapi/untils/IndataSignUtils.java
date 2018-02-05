@@ -1,4 +1,4 @@
-package com.indata.openapi.until;
+package com.indata.openapi.untils;
 
 /**
  * @author indata
