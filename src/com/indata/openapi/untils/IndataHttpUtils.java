@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
+ * 发送请求的工具类
  * @author indata
  * @create 2018/2/5
  **/
@@ -58,26 +59,12 @@ public class IndataHttpUtils {
         }
         // 使用finally块来关闭输出流、输入流
         finally {
-            try {
-                if (conn != null) {
-                    conn.disconnect();
-                }
-                if (out != null) {
-                    out.close();
-                }
-                if (in != null) {
-                    in.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            closeConnection(conn, out, in);
         }
         return result;
     }
 
-    /*
- * 发送POST请求
- */
+
     public static String sendPost(String url, String body, String ak_id, String ak_secret) {
         HttpURLConnection conn = null;
         Writer out = null;
@@ -127,21 +114,25 @@ public class IndataHttpUtils {
         }
         // 使用finally块来关闭输出流、输入流
         finally {
-            try {
-                if (conn != null) {
-                    conn.disconnect();
-                }
-                if (out != null) {
-                    out.close();
-                }
-                if (in != null) {
-                    in.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            closeConnection(conn, out, in);
         }
         return result;
+    }
+
+    private static void closeConnection(HttpURLConnection conn, Writer out, InputStream in) {
+        try {
+            if (conn != null) {
+                conn.disconnect();
+            }
+            if (out != null) {
+                out.close();
+            }
+            if (in != null) {
+                in.close();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private static String changeInputStream(InputStream inputStream,

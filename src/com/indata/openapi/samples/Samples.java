@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * api接口的例子
  * @author indata
  * @create 2018/2/5
  **/

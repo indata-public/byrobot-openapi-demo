@@ -1,6 +1,7 @@
 package com.indata.openapi.untils;
 
 /**
+ * 计算签名的工具类
  * @author indata
  * @create 2018/2/5
  **/
