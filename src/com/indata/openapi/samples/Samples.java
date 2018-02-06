@@ -19,7 +19,11 @@ public class Samples {
 
     private static final String APP_KEY = "*** 申请的AppKey ***";
     private static final String APP_SECRET = "*** 申请的AppSecret ***";
+    //线上环境
     private static final String baseUrl = "http://api.byrobot.cn";
+
+    //测试环境
+//    private static final String baseUrl = "http://api.xinoa.cc";
 
     /**
      * 流程步骤
