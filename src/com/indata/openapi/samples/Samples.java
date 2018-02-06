@@ -2,7 +2,7 @@ package com.indata.openapi.samples;
 
 import com.alibaba.fastjson.JSON;
 import com.indata.openapi.model.*;
-import com.indata.openapi.untils.IndataHttpUtils;
+import com.indata.openapi.utils.IndataHttpUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

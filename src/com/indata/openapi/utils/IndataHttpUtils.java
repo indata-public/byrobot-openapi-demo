@@ -1,4 +1,4 @@
-package com.indata.openapi.untils;
+package com.indata.openapi.utils;
 
 import sun.misc.BASE64Encoder;
 

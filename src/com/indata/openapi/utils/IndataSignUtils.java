@@ -1,4 +1,4 @@
-package com.indata.openapi.untils;
+package com.indata.openapi.utils;
 
 /**
  * 计算签名的工具类
