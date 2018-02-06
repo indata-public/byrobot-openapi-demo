@@ -149,7 +149,6 @@ public class IndataHttpUtils {
                 }
                 result = new String(byteArrayOutputStream.toByteArray(), encode);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
