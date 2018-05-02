@@ -159,7 +159,7 @@ public class Samples {
     private static void queryDoneTaskPhones() {
         String url = baseUrl + "/openapi/v1/task/queryDoneTaskPhones";
         DialedPhoneQueryVO dialedPhoneQueryVO = new DialedPhoneQueryVO();
-        dialedPhoneQueryVO.setCallJobId(66);
+        dialedPhoneQueryVO.setCallJobId(10053);
         dialedPhoneQueryVO.setDurationLeft(10);
         dialedPhoneQueryVO.setDurationRight(59);
         dialedPhoneQueryVO.setChatRoundLeft(0);
@@ -173,7 +173,7 @@ public class Samples {
         dialedPhoneQueryVO.setResultQueryList(resultQueryList);
         String json = JSON.toJSONString(dialedPhoneQueryVO);
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
-        System.out.println(result);
+        System.out.println("获取已完成的客户通话记录"+result);
     }
 
 
