@@ -1,5 +1,7 @@
 package com.indata.openapi.utils;
 
+import com.indata.openapi.utils.IndataHttpUtils;
+
 /**
  * 计算签名的工具类
  * @author indata

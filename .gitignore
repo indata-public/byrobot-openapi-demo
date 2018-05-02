@@ -1,5 +1,9 @@
-asspath
+# Created by .ignore support plugin (hsz.mobi)
 *~
+.DS_Store
 .idea/
 *.iml
-.DS_Store
+/**/target/
+/config/
+/logs/
+/doc/

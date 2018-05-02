@@ -3,24 +3,38 @@ package com.indata.openapi.model;
 import java.util.List;
 
 /**
+ *
+ * 创建任务的参数
  * @author indata
  * @create 2018/2/5
  **/
-public class CreateTaskVO {
+public class CreateTaskParamVO {
+    //公司id
     private Integer companyId;
+    //任务名称
     private String taskName;
+    //任务类型, 1-定时,2-手动
     private Integer taskType;
+    //任务开始日期
     private String startDate;
+    //可拨打开始时间
     private String workingStartTime;
+    //可拨打结束时间
     private String workingEndTime;
+    //主叫电话号码id列表，详见获取公司的主叫电话列表(getPhones)接口
     private List<Integer> userPhoneIds;
+    //机器人话术id，详见获取公司的机器人话术列表(getRobots)接口
     private Integer robotDefId;
+    //机器人话术场景id
     private Integer sceneDefId;
+    //机器人话术录音id
     private Integer sceneRecordId;
+    //注释
     private String remark;
     private Integer smsType;
     private String smsCondition;
     private Integer smsTemplateId;
+
 
     public Integer getCompanyId() {
         return companyId;

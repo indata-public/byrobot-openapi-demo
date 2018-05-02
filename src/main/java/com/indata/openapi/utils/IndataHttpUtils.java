@@ -1,5 +1,6 @@
 package com.indata.openapi.utils;
 
+import com.indata.openapi.utils.IndataSignUtils;
 import sun.misc.BASE64Encoder;
 
 import javax.crypto.Mac;
