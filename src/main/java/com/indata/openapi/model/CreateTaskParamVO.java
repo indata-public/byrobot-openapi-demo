@@ -29,12 +29,56 @@ public class CreateTaskParamVO {
     private Integer sceneDefId;
     //机器人话术录音id
     private Integer sceneRecordId;
+    private String breakStartTime;
+    private String breakEndTime;
     //注释
-    private String remark;
-    private Integer smsType;
-    private String smsCondition;
-    private Integer smsTemplateId;
+    Integer concurrencyQuota = 1;
+    Integer callType ;
+    String remark;
+    Integer smsType;
+    String smsCondition;
+    Integer smsTemplateId;
+    String userLevelPush;
 
+    public String getBreakStartTime() {
+        return breakStartTime;
+    }
+
+    public void setBreakStartTime(String breakStartTime) {
+        this.breakStartTime = breakStartTime;
+    }
+
+    public String getBreakEndTime() {
+        return breakEndTime;
+    }
+
+    public void setBreakEndTime(String breakEndTime) {
+        this.breakEndTime = breakEndTime;
+    }
+
+    public Integer getConcurrencyQuota() {
+        return concurrencyQuota;
+    }
+
+    public void setConcurrencyQuota(Integer concurrencyQuota) {
+        this.concurrencyQuota = concurrencyQuota;
+    }
+
+    public Integer getCallType() {
+        return callType;
+    }
+
+    public void setCallType(Integer callType) {
+        this.callType = callType;
+    }
+
+    public String getUserLevelPush() {
+        return userLevelPush;
+    }
+
+    public void setUserLevelPush(String userLevelPush) {
+        this.userLevelPush = userLevelPush;
+    }
 
     public Integer getCompanyId() {
         return companyId;

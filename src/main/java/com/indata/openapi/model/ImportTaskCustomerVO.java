@@ -14,7 +14,19 @@ public class ImportTaskCustomerVO {
     private Integer companyId;
     //任务id
     private Integer TaskId;
+
+    Integer forceTransferCustomer;
     //客户信息
+
+
+    public Integer getForceTransferCustomer() {
+        return forceTransferCustomer;
+    }
+
+    public void setForceTransferCustomer(Integer forceTransferCustomer) {
+        this.forceTransferCustomer = forceTransferCustomer;
+    }
+
     private List<CustomerInfoExtVO> customerInfoList;
 
     public Integer getCompanyId() {

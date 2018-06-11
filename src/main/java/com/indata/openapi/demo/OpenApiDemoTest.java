@@ -71,16 +71,24 @@ public class OpenApiDemoTest {
         //创建任务信息实体
         CreateTaskParamVO createTaskParamVO = new CreateTaskParamVO();
         createTaskParamVO.setCompanyId(1);
-        createTaskParamVO.setTaskName("流程测试任务04");
-        createTaskParamVO.setTaskType(2);
+        createTaskParamVO.setTaskName("测试");
+        createTaskParamVO.setTaskType(1);
         List<Integer> userPhoneIds = new ArrayList<>();
+        userPhoneIds.add(12);
         userPhoneIds.add(13);
+        //userPhoneIds.add(146);
+        createTaskParamVO.setCallType(2);
+        createTaskParamVO.setConcurrencyQuota(2);
+        createTaskParamVO.setStartDate("2018-06-07");
+        createTaskParamVO.setWorkingStartTime("08:50");
+        createTaskParamVO.setWorkingEndTime("23:59");
         createTaskParamVO.setUserPhoneIds(userPhoneIds);
-        createTaskParamVO.setRobotDefId(11);
-        createTaskParamVO.setSceneDefId(29);
-        createTaskParamVO.setSceneRecordId(21);
-        createTaskParamVO.setRemark("流程测试任务03");
+        createTaskParamVO.setRobotDefId(14);
+        createTaskParamVO.setSceneDefId(34);
+        createTaskParamVO.setSceneRecordId(34);
+        createTaskParamVO.setRemark("测试");
         String json = JSON.toJSONString(createTaskParamVO);
+        System.out.println(json);
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
         System.out.println("创建任务的结果:" + result);
     }
@@ -93,13 +101,16 @@ public class OpenApiDemoTest {
         String url = BASE_URL + "/openapi/v1/task/importTaskCustomer";
         ImportTaskCustomerVO importTaskCustomerVO = new ImportTaskCustomerVO();
         importTaskCustomerVO.setCompanyId(1);
-        importTaskCustomerVO.setTaskId(71);
-        //客户信息
+        importTaskCustomerVO.setTaskId(12);
+        importTaskCustomerVO.setForceTransferCustomer(1);
         List<CustomerInfoExtVO> customerInfoList = new CopyOnWriteArrayList<>();
-        CustomerInfoExtVO customerInfoExtVO = new CustomerInfoExtVO();
-        customerInfoExtVO.setName("繁华");
-        customerInfoExtVO.setPhone("18011122333");
-        customerInfoList.add(customerInfoExtVO);
+        //客户信息
+        for(int i=0;i<=50;i++){
+            CustomerInfoExtVO customerInfoExtVO1 = new CustomerInfoExtVO();
+            customerInfoExtVO1.setName("测试"+i);
+            customerInfoExtVO1.setPhone("1830581165"+i);
+            customerInfoList.add(customerInfoExtVO1);
+        }
         importTaskCustomerVO.setCustomerInfoList(customerInfoList);
         String json = JSON.toJSONString(importTaskCustomerVO);
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
