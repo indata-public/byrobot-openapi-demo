@@ -18,6 +18,15 @@ public class ImportTaskCustomerVO {
     Integer forceTransferCustomer;
     //客户信息
 
+    boolean phoneEncryption;
+
+    public boolean isPhoneEncryption() {
+        return phoneEncryption;
+    }
+
+    public void setPhoneEncryption(boolean phoneEncryption) {
+        this.phoneEncryption = phoneEncryption;
+    }
 
     public Integer getForceTransferCustomer() {
         return forceTransferCustomer;
