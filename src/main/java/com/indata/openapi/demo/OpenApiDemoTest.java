@@ -233,6 +233,20 @@ public class OpenApiDemoTest {
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
         System.out.println("停止任务返回结果:" + result);
     }
+
+    /**
+     * 删除任务
+     */
+    @Test
+    public void deleteTaskTest() {
+        String url = BASE_URL + "/openapi/v1/task/delete";
+        //任务的id
+        TaskParamVO taskParamVO = new TaskParamVO(18489);
+        String json = JSON.toJSONString(taskParamVO);
+        String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
+        System.out.println("删除任务返回结果:" + result);
+    }
+
     /**
      * 获取公司的主叫电话列表
      */

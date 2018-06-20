@@ -18,14 +18,14 @@ public class ImportTaskCustomerVO {
     Integer forceTransferCustomer;
     //客户信息
 
-    boolean phoneEncryption;
+    boolean encryptionPhone;
 
-    public boolean isPhoneEncryption() {
-        return phoneEncryption;
+    public boolean isEncryptionPhone() {
+        return encryptionPhone;
     }
 
-    public void setPhoneEncryption(boolean phoneEncryption) {
-        this.phoneEncryption = phoneEncryption;
+    public void setEncryptionPhone(boolean encryptionPhone) {
+        this.encryptionPhone = encryptionPhone;
     }
 
     public Integer getForceTransferCustomer() {
