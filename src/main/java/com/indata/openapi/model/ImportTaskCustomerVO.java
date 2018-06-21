@@ -20,6 +20,16 @@ public class ImportTaskCustomerVO {
 
     boolean encryptionPhone;
 
+    Integer isHttps;
+
+    public Integer getIsHttps() {
+        return isHttps;
+    }
+
+    public void setIsHttps(Integer isHttps) {
+        this.isHttps = isHttps;
+    }
+
     public boolean isEncryptionPhone() {
         return encryptionPhone;
     }
