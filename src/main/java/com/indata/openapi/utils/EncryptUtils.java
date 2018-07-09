@@ -14,40 +14,10 @@ import java.util.Base64;
  * @author annpeter.it@gmail.com
  */
 public class EncryptUtils {
-    public static String AES_KEY = "TaOXLwfQgDhFrqDC"; // AES 加解密使用的key，16位
 
-    /**
-     * 加密
-     *
-     * @param plainPassword
-     * @return
-     */
-    public static String encryptPassword(String plainPassword) {
-        byte[] x = EncryptUtils.aesEncrypt(plainPassword, AES_KEY);
-        return new String(x);
-    }
-
-    /**
-     * 解密
-     *
-     * @param encryptedPassword
-     * @return
-     */
-    public static String decryptPassword(String encryptedPassword) {
-        byte[] y = EncryptUtils.aesDecrypt(encryptedPassword.getBytes(), AES_KEY.getBytes());
-        return new String(y);
-    }
-
-    public static String MD5_16(String data) {
-        return MD5_16(data.getBytes());
-    }
 
     public static String MD5_16(byte[] data) {
         return MD5(data).substring(8, 24);
-    }
-
-    public static String MD5(String data) {
-        return MD5(data.getBytes());
     }
 
     public static String MD5(byte[] data) {
