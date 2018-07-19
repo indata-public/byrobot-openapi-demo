@@ -26,7 +26,9 @@ public class CreateTaskParamVO {
     private Integer sceneDefId;
     //机器人话术录音id
     private Integer sceneRecordId;
+    //中间不拨打开始时间
     private String breakStartTime;
+    //中间不拨打结束时间
     private String breakEndTime;
     //使用的总并发数
     private Integer concurrencyQuota = 1;
