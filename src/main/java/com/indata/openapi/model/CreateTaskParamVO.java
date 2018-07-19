@@ -3,10 +3,7 @@ package com.indata.openapi.model;
 import java.util.List;
 
 /**
- *
- * 创建任务的参数
- * @author indata
- * @create 2018/2/5
+ * 创建任务实体类
  **/
 public class CreateTaskParamVO {
     //公司id
@@ -31,14 +28,16 @@ public class CreateTaskParamVO {
     private Integer sceneRecordId;
     private String breakStartTime;
     private String breakEndTime;
-    //注释
-    Integer concurrencyQuota = 1;
-    Integer callType ;
-    String remark;
-    Integer smsType;
-    String smsCondition;
-    Integer smsTemplateId;
-    String userLevelPush;
+    //使用的总并发数
+    private Integer concurrencyQuota = 1;
+    //外呼类型，0-sim卡,1-固话（默认）, 2-无主叫
+    private Integer callType;
+    //备注
+    private String remark;
+    private Integer smsType;
+    private String smsCondition;
+    private Integer smsTemplateId;
+    private String userLevelPush;
 
     public String getBreakStartTime() {
         return breakStartTime;
