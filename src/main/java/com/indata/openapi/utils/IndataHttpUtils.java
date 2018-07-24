@@ -1,6 +1,6 @@
 package com.indata.openapi.utils;
 
-import com.indata.openapi.utils.IndataSignUtils;
+import com.sun.deploy.net.URLEncoder;
 import sun.misc.BASE64Encoder;
 
 import javax.crypto.Mac;
@@ -25,7 +25,8 @@ public class IndataHttpUtils {
         InputStream in = null;
         String result = "";
         try {
-            URL realUrl = new URL(url);
+            String newURL = getNewUrlByUrlEncodeParam(url);
+            URL realUrl = new URL(newURL);
             /*
              * http header 参数
              */
@@ -66,13 +67,15 @@ public class IndataHttpUtils {
     }
 
 
+
     public static String sendPost(String url, String body, String ak_id, String ak_secret) {
         HttpURLConnection conn = null;
         Writer out = null;
         InputStream in = null;
         String result = "";
         try {
-            URL realUrl = new URL(url);
+            String newURL = getNewUrlByUrlEncodeParam(url);
+            URL realUrl = new URL(newURL);
             /*
              * http header 参数
              */
@@ -175,4 +178,34 @@ public class IndataHttpUtils {
         df.setTimeZone(new java.util.SimpleTimeZone(0, "GMT"));
         return df.format(date);
     }
+    /**
+     * UrlEncode URL's Param for resolve
+     * @param url 原url 包含
+     * @return newURL
+     * @throws UnsupportedEncodingException
+     */
+    private static String getNewUrlByUrlEncodeParam(String url) throws UnsupportedEncodingException {
+        StringBuilder urlForEncode = new StringBuilder();
+        String newURL = "";
+        if (url.contains("=")){
+            String[] urlBeforeEncode = url.split("=");
+            for (int i = 1; i < urlBeforeEncode.length; i++) {
+                if (urlBeforeEncode[i].contains("&")){
+                    String[] parmsplit = urlBeforeEncode[i].split("&");
+                    URLEncoder.encode(parmsplit[0], "utf-8");
+                    urlBeforeEncode[i] = parmsplit[0] + "&" + parmsplit[1];
+                }
+                if (i == urlBeforeEncode.length - 1) {
+                    urlBeforeEncode[i] =  URLEncoder.encode(urlBeforeEncode[i], "utf-8");
+                }
+                urlForEncode = urlForEncode.append(urlBeforeEncode[i]);
+                if (i != urlBeforeEncode.length -1 ) {
+                    urlForEncode = urlForEncode.append("=");
+                }
+            }
+            newURL = urlBeforeEncode[0] + "=" + urlForEncode.toString();
+        }
+        return url;
+    }
+
 }

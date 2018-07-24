@@ -259,4 +259,47 @@ public class OpenApiDemoTest {
         System.out.println("获取公司的主叫电话列表的结果:" + result);
     }
 
+    /**
+     * 单次电话外呼
+     */
+    @Test
+    public void singlePhoneCallTest() {
+        CallCustomerInfoVO callCustomerInfoVO = new CallCustomerInfoVO();
+
+        callCustomerInfoVO.setCompanyId(127);
+        callCustomerInfoVO.setRobotDefId(1295);
+        callCustomerInfoVO.setSceneId(1307);
+        callCustomerInfoVO.setSceneRecordId(1307);
+        callCustomerInfoVO.setCustomerId(18670654);
+
+        String url = BASE_URL + "/openapi/v1/task/call";
+
+        String json = JSON.toJSONString(callCustomerInfoVO);
+        String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
+        System.out.println(result);
+    }
+
+
+    /**
+     * 修改任务的AI坐席数
+     */
+    @Test
+    public void updateTaskTest() {
+        UpdateTaskParamVO updateTaskParamVO = new UpdateTaskParamVO();
+        updateTaskParamVO.setTaskId(1);
+        updateTaskParamVO.setTaskName("ss");
+        updateTaskParamVO.setUserPhoneIds("255");
+        updateTaskParamVO.setConcurrencyQuota(1);
+        updateTaskParamVO.setCallType(2);
+        updateTaskParamVO.setCompanyId(23);
+
+        String url = BASE_URL + "/openapi/v1/task/update";
+
+        String json = JSON.toJSONString(updateTaskParamVO);
+        String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
+        System.out.println(result);
+    }
+
+
+
 }
