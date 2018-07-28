@@ -6,6 +6,7 @@ import com.indata.openapi.utils.IndataHttpUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -34,9 +35,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class OpenApiDemoTest {
     //TODO app key  需要修改
-    private static final String APP_KEY = "*** 申请APP_KEY ***";
+    private static final String APP_KEY = "****appKey*******";
     //TODO app SECRET  需要修改
-    private static final String APP_SECRET = "*** 申请APP_SECRET ***";
+    private static final String APP_SECRET = "*****appSecret*******";
     //线上环境
     private static final String BASE_URL = "http://api.byrobot.cn";
 
@@ -70,13 +71,13 @@ public class OpenApiDemoTest {
         String url = BASE_URL + "/openapi/v1/task/createTask";
         //创建任务信息实体
         CreateTaskParamVO createTaskParamVO = new CreateTaskParamVO();
-        createTaskParamVO.setCompanyId(1);
+        createTaskParamVO.setCompanyId(67);
         createTaskParamVO.setTaskName("测试");
         createTaskParamVO.setTaskType(1);
         List<Integer> userPhoneIds = new ArrayList<>();
         userPhoneIds.add(12);
         userPhoneIds.add(13);
-        //userPhoneIds.add(146);
+        userPhoneIds.add(146);
         createTaskParamVO.setCallType(2);
         createTaskParamVO.setConcurrencyQuota(2);
         createTaskParamVO.setStartDate("2018-06-07");
@@ -298,6 +299,28 @@ public class OpenApiDemoTest {
         String json = JSON.toJSONString(updateTaskParamVO);
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
         System.out.println(result);
+    }
+
+
+    @Test
+    public void testCallByPhoneNum() {
+
+        SingleCallVO singleCallVO = new SingleCallVO();
+        singleCallVO.setMobile("15957182700");
+        singleCallVO.setRobotDefId(1);
+        singleCallVO.setSceneDefId(1);
+        singleCallVO.setSceneRecordId(1);
+        singleCallVO.setUserName("仲谋007");
+        singleCallVO.setCompanyId(67);
+        singleCallVO.setVariables(new HashMap<>());
+
+        String url = BASE_URL + "/openapi/v1/task/singleCallByMobile";
+
+        String json = JSON.toJSONString(singleCallVO);
+        String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
+        System.out.println(result);
+
+
     }
 
 
