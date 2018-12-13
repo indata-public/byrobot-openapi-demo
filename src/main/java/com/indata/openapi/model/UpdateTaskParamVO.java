@@ -70,7 +70,7 @@ public class UpdateTaskParamVO {
      */
     private Integer repeatCallTimes;
     /**
-     * 重播意向等级
+     * 重播间隔
      */
     private Integer repeatCallInterval;
 
