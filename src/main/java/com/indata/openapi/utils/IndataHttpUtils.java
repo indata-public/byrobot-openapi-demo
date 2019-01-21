@@ -46,6 +46,8 @@ public class IndataHttpUtils {
             conn.setRequestProperty("datetime", date);
             conn.setRequestProperty("appkey", ak_id);
             conn.setRequestProperty("sign", sign);
+            conn.setConnectTimeout(10 * 1000);
+            conn.setReadTimeout(600 * 1000);
 
             // 建立实际的连接
             conn.connect();
