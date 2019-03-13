@@ -40,6 +40,16 @@ public class CreateTaskParamVO {
     private String smsCondition;
     private Integer smsTemplateId;
     private String userLevelPush;
+    private List<RuleDetail> repeatCallRule;
+
+
+    public List<RuleDetail> getRepeatCallRule() {
+        return repeatCallRule;
+    }
+
+    public void setRepeatCallRule(List<RuleDetail> repeatCallRule) {
+        this.repeatCallRule = repeatCallRule;
+    }
 
     public String getBreakStartTime() {
         return breakStartTime;
@@ -191,6 +201,36 @@ public class CreateTaskParamVO {
 
     public void setSmsTemplateId(Integer smsTemplateId) {
         this.smsTemplateId = smsTemplateId;
+    }
+
+    public static class RuleDetail {
+        private Integer phoneStatus;
+        private Integer times;
+        private Integer interval;
+
+        public Integer getPhoneStatus() {
+            return phoneStatus;
+        }
+
+        public void setPhoneStatus(Integer phoneStatus) {
+            this.phoneStatus = phoneStatus;
+        }
+
+        public Integer getTimes() {
+            return times;
+        }
+
+        public void setTimes(Integer times) {
+            this.times = times;
+        }
+
+        public Integer getInterval() {
+            return interval;
+        }
+
+        public void setInterval(Integer interval) {
+            this.interval = interval;
+        }
     }
 
 }

@@ -6,6 +6,7 @@ import com.indata.openapi.utils.IndataHttpUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -88,6 +89,11 @@ public class OpenApiDemoTest {
         createTaskParamVO.setSceneDefId(34);
         createTaskParamVO.setSceneRecordId(34);
         createTaskParamVO.setRemark("测试");
+        CreateTaskParamVO.RuleDetail ruleDetail = new CreateTaskParamVO.RuleDetail();
+        ruleDetail.setPhoneStatus(10);
+        ruleDetail.setInterval(5);
+        ruleDetail.setTimes(2);
+        createTaskParamVO.setRepeatCallRule(Arrays.asList(ruleDetail));
         String json = JSON.toJSONString(createTaskParamVO);
         System.out.println(json);
         String result = IndataHttpUtils.sendPost(url, json, APP_KEY, APP_SECRET);
