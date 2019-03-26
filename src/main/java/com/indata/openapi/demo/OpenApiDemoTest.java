@@ -182,7 +182,7 @@ public class OpenApiDemoTest {
     @Test
     public  void getPhoneLogInfoTest() {
         //通话记录id
-        Integer callInstanceId = 695;
+        Long callInstanceId = 695L;
         String url = BASE_URL + "/openapi/v1/task/phoneLogInfo?callInstanceId=" + callInstanceId;
         String result = IndataHttpUtils.sendGet(url, APP_KEY, APP_SECRET);
         System.out.println("通话的详情的结果:" + result);
