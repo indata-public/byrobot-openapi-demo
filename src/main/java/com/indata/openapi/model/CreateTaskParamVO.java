@@ -40,7 +40,9 @@ public class CreateTaskParamVO {
     private String smsCondition;
     private Integer smsTemplateId;
     private String userLevelPush;
+    private boolean repeatCall = false;
     private List<RuleDetail> repeatCallRule;
+
 
 
     public List<RuleDetail> getRepeatCallRule() {
@@ -49,6 +51,14 @@ public class CreateTaskParamVO {
 
     public void setRepeatCallRule(List<RuleDetail> repeatCallRule) {
         this.repeatCallRule = repeatCallRule;
+    }
+
+    public boolean isRepeatCall() {
+        return repeatCall;
+    }
+
+    public void setRepeatCall(boolean repeatCall) {
+        this.repeatCall = repeatCall;
     }
 
     public String getBreakStartTime() {
