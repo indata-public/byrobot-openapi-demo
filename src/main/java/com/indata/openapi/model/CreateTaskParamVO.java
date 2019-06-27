@@ -22,13 +22,9 @@ public class CreateTaskParamVO {
     private List<Integer> userPhoneIds;
     //机器人话术id，详见获取公司的机器人话术列表(getRobots)接口
     private Integer robotDefId;
-    //机器人话术场景id
-    private Integer sceneDefId;
-    //机器人话术录音id
-    private Integer sceneRecordId;
-    //中间不拨打开始时间
+    //暂停拨打开始时间
     private String breakStartTime;
-    //中间不拨打结束时间
+    //暂停拨拨打结束时间
     private String breakEndTime;
     //使用的总并发数
     private Integer concurrencyQuota = 1;
@@ -163,22 +159,6 @@ public class CreateTaskParamVO {
 
     public void setRobotDefId(Integer robotDefId) {
         this.robotDefId = robotDefId;
-    }
-
-    public Integer getSceneDefId() {
-        return sceneDefId;
-    }
-
-    public void setSceneDefId(Integer sceneDefId) {
-        this.sceneDefId = sceneDefId;
-    }
-
-    public Integer getSceneRecordId() {
-        return sceneRecordId;
-    }
-
-    public void setSceneRecordId(Integer sceneRecordId) {
-        this.sceneRecordId = sceneRecordId;
     }
 
     public String getRemark() {

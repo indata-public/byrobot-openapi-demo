@@ -86,8 +86,6 @@ public class OpenApiDemoTest {
         createTaskParamVO.setWorkingEndTime("23:59");
         createTaskParamVO.setUserPhoneIds(userPhoneIds);
         createTaskParamVO.setRobotDefId(14);
-        createTaskParamVO.setSceneDefId(34);
-        createTaskParamVO.setSceneRecordId(34);
         createTaskParamVO.setRemark("测试");
         CreateTaskParamVO.RuleDetail ruleDetail = new CreateTaskParamVO.RuleDetail();
         ruleDetail.setPhoneStatus(10);
