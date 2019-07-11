@@ -207,7 +207,7 @@ public class IndataHttpUtils {
             }
             newURL = urlBeforeEncode[0] + "=" + urlForEncode.toString();
         }
-        return url;
+        return newURL;
     }
 
 }
