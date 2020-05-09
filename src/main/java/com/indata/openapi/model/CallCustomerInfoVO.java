@@ -16,7 +16,7 @@ public class CallCustomerInfoVO {
     /**
      * 客户id
      */
-    private Integer customerId;
+    private Long customerId;
     /**
      * 客户手机号
      */
@@ -39,11 +39,11 @@ public class CallCustomerInfoVO {
         this.companyId = companyId;
     }
 
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 

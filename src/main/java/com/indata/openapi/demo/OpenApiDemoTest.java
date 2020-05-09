@@ -275,7 +275,7 @@ public class OpenApiDemoTest {
         callCustomerInfoVO.setRobotDefId(1295);
         callCustomerInfoVO.setSceneId(1307);
         callCustomerInfoVO.setSceneRecordId(1307);
-        callCustomerInfoVO.setCustomerId(18670654);
+        callCustomerInfoVO.setCustomerId(18670654L);
 
         String url = BASE_URL + "/openapi/v1/task/call";
 
